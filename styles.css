@@ -71,6 +71,7 @@ span{
   justify-content: space-between;
   align-items: center;
   z-index: 100;
+
 }
 
 .header.sticky{
@@ -96,6 +97,8 @@ span{
 .navbar a:hover, .navbar a.active{
     color: var(--main-color);
 }
+
+
 
 #menu-icon{
   font-size: 3.6rem;
@@ -454,12 +457,160 @@ color: var(--second-bg-color);
 
 
 
+header .navigation {
+  display: none;
+}
+
+.navigation{
+  width: 400px;
+  height: 70;
+  background: var(--main-color);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 0 3px var(--main-color);
+}
+
+.navigation ul{
+display: flex;
+  width: 350px;
+}
+
+.navigation ul .list{
+  position: relative;
+  list-style:none;
+  width: 70px;
+  height: 70px;
+  z-index: 1;
+}
+
+.navigation ul li a{
+  position: relative;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+  
+}
+
+.navigation ul li a .icon{
+  position: relative;
+  display: block;
+  line-height: 75px;
+  font-size: 1.5em;
+  text-align: center;
+  transition: 0.5s;
+  color: var(--bg-color);
+}
+
+.navigation ul li.active a .icon {
+  transform: translateY(-32px);
+}
+
+.navigation ul li a .text{
+  position: absolute;
+  color: var(--bg-color);
+  font-weight: 600;
+  font-size: 1.6rem;
+  letter-spacing: 0.05;
+  transition: 0.5s;
+  opacity: 0;
+}
+
+.navigation ul li.active a .text{
+  opacity: 1;
+  transform: translateY(10px);
+}
+
+.indicator{
+  position: absolute;
+  width: 70px;
+  top: -50%;
+  height: 70px;
+  background: #29fd53;
+  border-radius: 50%;
+  border: 6px solid var(--bg-color);
+  transition: 0.5s;
+}
+
+.indicator::before{
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -22px;
+  width: 20px;
+  height: 20px;
+  background: var(--main-color);
+  border-top-right-radius: 200px ;
+  box-shadow: 0 -10px 0 var(--bg-color)
+}
+
+.indicator::after{
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -22px;
+  width: 20px;
+  height: 20px;
+  background: var(--main-color);
+  border-top-left-radius: 20px;
+  box-shadow: 0 -10px 0 0 var(--clr)
+}
+
+.navigation ul li:nth-child(1).active ~ .indicator{
+  transform: translateX(calc(70px * 0));
+}
+.navigation ul li:nth-child(2).active ~ .indicator{
+  transform: translateX(calc(70px * 1));
+}
+.navigation ul li:nth-child(3).active ~ .indicator{
+  transform: translateX(calc(70px * 2));
+}
+.navigation ul li:nth-child(4).active ~ .indicator{
+  transform: translateX(calc(70px * 3));
+}
+.navigation ul li:nth-child(5).active ~ .indicator{
+  transform: translateX(calc(70px * 4));
+}
+
+
+
+
+
+
+
+
 
 
 @media (max-width: 768px){
   #menu-icon{
-    display: block;
+    display: none;
   }
+ 
+section .home-content{
+  margin-top: 9px;
+}
+
+section .about-content{
+  margin-top: 20px;
+}
+
+.services .heading{
+  margin-top: 15px;
+}
+
+.portfolio .heading{
+  margin-top: 15px
+}
+
+ header .navigation{
+  display:flex;
+ }
 
   .navbar{
     position: absolute;
@@ -473,8 +624,21 @@ color: var(--second-bg-color);
     display: none;
   }
 
+  .header .logo{
+    display: none;
+  }
+
+  .header{
+    justify-content: center;
+  }
+
+
   .navbar.active{
     display: block;
+  }
+
+  header .navigation ion-icon{
+    font-size: 2.5rem;
   }
 
   .navbar a{
