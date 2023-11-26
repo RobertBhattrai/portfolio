@@ -10,8 +10,6 @@ navbar.classList.toggle('active');
 
 
 
-
-
 //scroll setions active links//
 let sections = document.querySelectorAll('section');
 let navLinks = document.querySelectorAll('header navbar a');
